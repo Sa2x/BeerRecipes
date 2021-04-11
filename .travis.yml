@@ -19,6 +19,7 @@ env:
     # Add this
     - MALLOC_ARENA_MAX=2
 
+
 sudo: required
 
 before_install:
