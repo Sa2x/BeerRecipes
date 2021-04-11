@@ -1,5 +1,6 @@
 package com.example.beerrecipes.ui.di
 
+import com.example.beerrecipes.ui.DIReturn
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,12 +14,12 @@ object DatabaseModule {
 
     @Provides
     @Singleton
-    fun provideDatabase(){
-
+    fun provideDatabase():DIReturn{
+        return DIReturn();
     }
 
     @Provides
-    fun provideBeerDao(){
-
+    fun provideBeerDao():DIReturn{
+        return DIReturn();
     }
 }

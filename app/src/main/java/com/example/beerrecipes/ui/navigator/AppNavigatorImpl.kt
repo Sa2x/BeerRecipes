@@ -1,3 +1,5 @@
 package com.example.beerrecipes.ui.navigator
 
-class AppNavigatorImpl
+class AppNavigatorImpl : AppNavigator {
+
+}
