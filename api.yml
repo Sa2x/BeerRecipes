@@ -1,0 +1,77 @@
+{
+  "swagger": "2.0",
+  "info": { "version": "2.0.0", "title": "PunkApi" },
+  "basePath": "/v2",
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths":
+    {
+      "/beers":
+        {
+          "get":
+            {
+              "tags": ["Beer"],
+              "summary": "Find a list from the data source.",
+              "operationId": "Beer_list",
+              "parameters":
+                [
+                  {
+                    "name": "page",
+                    "in": "query",
+                    "description": "Page id",
+                    "required": false,
+                    "type": "number",
+                    "format": "JSON",
+                  },
+                  {
+                    "name": "per_page",
+                    "in": "query",
+                    "description": "Perpage count",
+                    "required": false,
+                    "type": "number",
+                    "format": "JSON",
+                  },
+                ],
+              "responses":
+                {
+                  "200":
+                    {
+                      "description": "Request was successful",
+                      "type": "array",
+                      "schema": { "$ref": "#/definitions/Beer" },
+                    },
+                },
+              "deprecated": false,
+            },
+        },
+      "/beers/{id}":
+        {
+          "get":
+            {
+              "tags": ["Beer"],
+              "summary": "Find a model instance by id from the data source.",
+              "operationId": "Beer_findById",
+              "parameters":
+                [
+                  {
+                    "name": "id",
+                    "in": "path",
+                    "description": "Model id",
+                    "required": true,
+                    "type": "number",
+                    "format": "JSON",
+                  },
+                ],
+              "responses":
+                {
+                  "200":
+                    {
+                      "description": "Request was successful",
+                      "schema": { "$ref": "#/definitions/Beer" },
+                    },
+                },
+              "deprecated": false,
+            },
+        },
+    },
+}
