@@ -1,5 +1,10 @@
 package com.example.beerrecipes.ui.model
 
-class Malt {
+import com.google.gson.annotations.SerializedName
 
-}
+data class Malt (
+    @SerializedName("name")
+    var name:String? = null,
+    @SerializedName("amount")
+    var amount:UnitedValue? = null,
+)

@@ -18,12 +18,6 @@ abstract class FavouriteBeerDatabase : RoomDatabase() {
         override fun onCreate(db: SupportSQLiteDatabase) {
             super.onCreate(db)
 
-            INSTANCE?.let { database ->
-                scope.launch {
-                    val beerDao = database.favouriteBeerDao()
-                    beerDao.deleteAll()
-                }
-            }
         }
     }
 
@@ -39,7 +33,7 @@ abstract class FavouriteBeerDatabase : RoomDatabase() {
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
                     FavouriteBeerDatabase::class.java,
-                    "characters"
+                    "beers"
                 )
                     .addCallback(BeerDatabaseCallback(scope))
                     .build()

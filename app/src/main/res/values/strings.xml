@@ -14,4 +14,13 @@
     <string name="beer_list">Beer List</string>
     <string name="favourites">Favourites</string>
     <string name="about">About</string>
+    <string name="name">Name</string>
+    <string name="tagline">Tagline</string>
+    <string name="description">Description</string>
+    <string name="mash">Mash</string>
+    <string name="ferment">Ferment</string>
+    <string name="twist">Twist</string>
+    <string name="method">Method</string>
+    <string name="ibu">IBU</string>
+    <string name="abv">ABV</string>
 </resources>

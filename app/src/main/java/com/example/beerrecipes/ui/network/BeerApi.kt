@@ -1,11 +1,7 @@
 package com.example.beerrecipes.ui.network
 
-import io.swagger.client.CollectionFormats.*
-import io.swagger.client.model.Beer
-import okhttp3.RequestBody
-import retrofit2.Call
+import com.example.beerrecipes.ui.model.Beer
 import retrofit2.http.*
-import java.math.BigDecimal
 
 interface BeerApi {
     /**
@@ -15,10 +11,11 @@ interface BeerApi {
      * @param perPage Perpage count
      * @return Call<Beer>
     </Beer> */
+
     @GET("beers")
     fun beerList(
-            @Query("page") page: BigDecimal?, @Query("per_page") perPage: BigDecimal?
-    ): Call<Beer?>?
+            @Query("page") page: Int, @Query("per_page") perPage: Int
+    ): retrofit2.Call<List<Beer>?>?
 
     /**
      * Find a model instance by id from the data source.
@@ -28,6 +25,6 @@ interface BeerApi {
     </Beer> */
     @GET("beers/{id}")
     fun beerFindById(
-            @Path("id") id: BigDecimal?
-    ): Call<Beer?>?
+            @Path("id") id: Int
+    ): retrofit2.Call<List<Beer>?>?
 }
